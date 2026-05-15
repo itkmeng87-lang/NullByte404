@@ -572,7 +572,7 @@ function Navbar({ active, setActive }) {
       <button onClick={() => setMenuOpen(!menuOpen)}
         style={{ background: "none", border: "none", cursor: "pointer", display: "none", flexDirection: "column", gap: 5, padding: 4 }}
         className="hamburger">
-        {[0,1,2].map(i => <span key={i} style={{ display: "block", width: 22, height: 2, background: "#00d4ff", borderRadius: 2 }} />)}
+        {[0, 1, 2].map(i => <span key={i} style={{ display: "block", width: 22, height: 2, background: "#00d4ff", borderRadius: 2 }} />)}
       </button>
 
       {/* Mobile menu */}
@@ -899,215 +899,241 @@ export default function Portfolio() {
             {/* Avatar */}
             <div className="float" style={{ flexShrink: 0 }}>
               <div style={{ position: "relative", width: 280, height: 280 }}>
+
                 {/* Rotating ring */}
-                <div style={{
-                  position: "absolute", inset: -16, borderRadius: "50%",
-                  border: "1px solid transparent",
-                  borderTopColor: "rgba(0,212,255,0.5)",
-                  borderRightColor: "rgba(124,58,237,0.3)",
-                  animation: "rotate 6s linear infinite",
-                }} />
-                <div style={{
-                  position: "absolute", inset: -8, borderRadius: "50%",
-                  border: "1px solid transparent",
-                  borderBottomColor: "rgba(0,212,255,0.3)",
-                  animation: "rotate 10s linear infinite reverse",
-                }} />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: -16,
+                    borderRadius: "50%",
+                    border: "1px solid transparent",
+                    borderTopColor: "rgba(0,212,255,0.5)",
+                    borderRightColor: "rgba(124,58,237,0.3)",
+                    animation: "rotate 6s linear infinite",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: -8,
+                    borderRadius: "50%",
+                    border: "1px solid transparent",
+                    borderBottomColor: "rgba(0,212,255,0.3)",
+                    animation: "rotate 10s linear infinite reverse",
+                  }}
+                />
+
                 {/* Main circle */}
-                <div style={{
-                  width: 280, height: 280, borderRadius: "50%",
-                  background: "linear-gradient(135deg, rgba(0,212,255,0.12), rgba(124,58,237,0.12))",
-                  border: "1px solid rgba(0,212,255,0.2)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  backdropFilter: "blur(20px)",
-                  boxShadow: "0 0 60px rgba(0,212,255,0.1), inset 0 0 40px rgba(0,212,255,0.05)",
-                }}>
-                  <div style={{ textAlign: "center" }}>
-                    <img src={germinai} alt="" className="rounded-3xl"/>
-                    {/* <div style={{ fontSize: "4.5rem", marginBottom: "0.5rem" }}>👨‍💻</div> */}
-                    {/* <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.65rem", color: "rgba(0,212,255,0.6)", letterSpacing: "0.3em" }}>NULL·BYTE·404</div> */}
-                  </div>
+                <div
+                  style={{
+                    width: 280,
+                    height: 280,
+                    borderRadius: "50%",
+                    overflow: "hidden", // IMPORTANT
+                    background:
+                      "linear-gradient(135deg, rgba(0,212,255,0.12), rgba(124,58,237,0.12))",
+                    border: "1px solid rgba(0,212,255,0.2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backdropFilter: "blur(20px)",
+                    boxShadow:
+                      "0 0 60px rgba(0,212,255,0.1), inset 0 0 40px rgba(0,212,255,0.05)",
+                  }}
+                >
+                  <img
+                    src={germinai}
+                    alt="profile"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                    }}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+    </section >
 
-      {/* ─── ABOUT ─── */}
-      <section id="about" style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ ...sectionStyle }}>
-          <span style={subAccent}>// about_me</span>
-          <h2 style={headingStyle}>Who Am I?</h2>
-          <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
+      {/* ─── ABOUT ─── */ }
+      <section section id = "about" style = {{ position: "relative", zIndex: 1 }
+}>
+  <div style={{ ...sectionStyle }}>
+    <span style={subAccent}>// about_me</span>
+    <h2 style={headingStyle}>Who Am I?</h2>
+    <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
 
-          <div className="about-grid" style={{ display: "flex", gap: "4rem", alignItems: "flex-start" }}>
-            <div style={{ flex: 1 }}>
-              <div style={{
-                background: "rgba(255,255,255,0.025)", border: "1px solid rgba(0,212,255,0.1)",
-                borderRadius: 16, padding: "2rem", backdropFilter: "blur(10px)",
-                borderLeft: "2px solid rgba(0,212,255,0.4)",
-              }}>
-                <p style={{ margin: "0 0 1rem", fontSize: "0.9rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.85 }}>
-                  I'm <span style={{ color: "#00d4ff" }}>NullByte404</span>, a passionate frontend developer and UI designer who crafts digital experiences that are both beautiful and functional. With a deep love for the intersection of code and design, I transform ideas into sleek, performant web applications.
-                </p>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.85 }}>
-                  When I'm not pushing pixels or debugging code, I'm exploring new technologies, contributing to open-source projects, and constantly refining my craft. I believe great design is invisible — it just works.
-                </p>
-              </div>
-            </div>
-            <div style={{ flex: 1 }}>
-              {[
-                { label: "Experience", value: "3+ Years" },
-                { label: "Projects Completed", value: "40+" },
-                { label: "Technologies", value: "15+" },
-                { label: "Open Source Contributions", value: "20+" },
-              ].map((stat) => (
-                <div key={stat.label} style={{
-                  display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "1rem 0", borderBottom: "1px solid rgba(255,255,255,0.05)",
-                }}>
-                  <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em" }}>{stat.label}</span>
-                  <span style={{ fontFamily: "'Courier New', monospace", fontSize: "1rem", color: "#00d4ff", fontWeight: 700 }}>{stat.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+    <div className="about-grid" style={{ display: "flex", gap: "4rem", alignItems: "flex-start" }}>
+      <div style={{ flex: 1 }}>
+        <div style={{
+          background: "rgba(255,255,255,0.025)", border: "1px solid rgba(0,212,255,0.1)",
+          borderRadius: 16, padding: "2rem", backdropFilter: "blur(10px)",
+          borderLeft: "2px solid rgba(0,212,255,0.4)",
+        }}>
+          <p style={{ margin: "0 0 1rem", fontSize: "0.9rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.85 }}>
+            I'm <span style={{ color: "#00d4ff" }}>NullByte404</span>, a passionate frontend developer and UI designer who crafts digital experiences that are both beautiful and functional. With a deep love for the intersection of code and design, I transform ideas into sleek, performant web applications.
+          </p>
+          <p style={{ margin: 0, fontSize: "0.9rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.85 }}>
+            When I'm not pushing pixels or debugging code, I'm exploring new technologies, contributing to open-source projects, and constantly refining my craft. I believe great design is invisible — it just works.
+          </p>
         </div>
-      </section>
+      </div>
+      <div style={{ flex: 1 }}>
+        {[
+          { label: "Experience", value: "3+ Years" },
+          { label: "Projects Completed", value: "40+" },
+          { label: "Technologies", value: "15+" },
+          { label: "Open Source Contributions", value: "20+" },
+        ].map((stat) => (
+          <div key={stat.label} style={{
+            display: "flex", justifyContent: "space-between", alignItems: "center",
+            padding: "1rem 0", borderBottom: "1px solid rgba(255,255,255,0.05)",
+          }}>
+            <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.1em" }}>{stat.label}</span>
+            <span style={{ fontFamily: "'Courier New', monospace", fontSize: "1rem", color: "#00d4ff", fontWeight: 700 }}>{stat.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+      </section >
 
-      {/* ─── SKILLS ─── */}
-      <section id="skills" style={{ position: "relative", zIndex: 1, background: "rgba(0,212,255,0.015)" }}>
-        <div style={{ ...sectionStyle }}>
-          <span style={subAccent}>// skills.map()</span>
-          <h2 style={headingStyle}>Technical Stack</h2>
-          <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
+  {/* ─── SKILLS ─── */ }
+  < section id = "skills" style = {{ position: "relative", zIndex: 1, background: "rgba(0,212,255,0.015)" }}>
+    <div style={{ ...sectionStyle }}>
+      <span style={subAccent}>// skills.map()</span>
+      <h2 style={headingStyle}>Technical Stack</h2>
+      <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
 
-          <div className="skills-cols" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 4rem" }}>
-            {SKILLS.map((skill, i) => (
-              <SkillBar key={skill.name} {...skill} delay={i * 100} />
+      <div className="skills-cols" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 4rem" }}>
+        {SKILLS.map((skill, i) => (
+          <SkillBar key={skill.name} {...skill} delay={i * 100} />
+        ))}
+      </div>
+    </div>
+      </section >
+
+  {/* ─── PROJECTS ─── */ }
+  < section id = "projects" style = {{ position: "relative", zIndex: 1 }}>
+    <div style={{ ...sectionStyle }}>
+      <span style={subAccent}>// projects.filter(best)</span>
+      <h2 style={headingStyle}>Featured Work</h2>
+      <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
+
+      <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem" }}>
+        {PROJECTS.map((p, i) => <ProjectCard key={p.title} project={p} i={i} />)}
+      </div>
+    </div>
+      </section >
+
+  {/* ─── SERVICES ─── */ }
+  < section id = "services" style = {{ position: "relative", zIndex: 1, background: "rgba(124,58,237,0.02)" }}>
+    <div style={{ ...sectionStyle }}>
+      <span style={subAccent}>// services.offer()</span>
+      <h2 style={headingStyle}>What I Do</h2>
+      <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
+
+      <div className="services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1.25rem" }}>
+        {SERVICES.map((s, i) => <ServiceCard key={s.title} service={s} i={i} />)}
+      </div>
+    </div>
+      </section >
+
+  {/* ─── CONTACT ─── */ }
+  < section id = "contact" style = {{ position: "relative", zIndex: 1 }}>
+    <div style={{ ...sectionStyle }}>
+      <span style={subAccent}>// contact.init()</span>
+      <h2 style={headingStyle}>Get In Touch</h2>
+      <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
+
+      <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+        <div>
+          <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "2rem" }}>
+            Have a project in mind or just want to connect? My inbox is always open. Whether you have a question or just want to say hello, I'll do my best to get back to you.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {[
+              { icon: "📧", label: "Email", value: "nullbyte404@dev.io" },
+              { icon: "📍", label: "Location", value: "Digital Realm, Internet" },
+              { icon: "⚡", label: "Status", value: "Available for work" },
+            ].map((item) => (
+              <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,212,255,0.08)", border: "1px solid rgba(0,212,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", flexShrink: 0 }}>
+                  {item.icon}
+                </div>
+                <div>
+                  <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.65rem", color: "rgba(0,212,255,0.6)", letterSpacing: "0.2em", marginBottom: 2 }}>{item.label}</div>
+                  <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.82rem", color: "#e2e8f0" }}>{item.value}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Social links */}
+          <div style={{ marginTop: "2rem", display: "flex", gap: "0.75rem" }}>
+            {[
+              { label: "GitHub", icon: "⌘", href: "https://github.com" },
+              { label: "Facebook", icon: "◉", href: "https://facebook.com" },
+              { label: "Telegram", icon: "◈", href: "https://telegram.org" },
+            ].map((social) => (
+              <a key={social.label} href={social.href} target="_blank" rel="noreferrer"
+                style={{
+                  display: "flex", alignItems: "center", gap: "0.5rem",
+                  background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: 8, padding: "0.6rem 1rem",
+                  color: "rgba(255,255,255,0.6)", textDecoration: "none",
+                  fontFamily: "'Courier New', monospace", fontSize: "0.75rem",
+                  transition: "all 0.2s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(0,212,255,0.4)"; e.currentTarget.style.color = "#00d4ff"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.color = "rgba(255,255,255,0.6)"; }}>
+                <span>{social.icon}</span> {social.label}
+              </a>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* ─── PROJECTS ─── */}
-      <section id="projects" style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ ...sectionStyle }}>
-          <span style={subAccent}>// projects.filter(best)</span>
-          <h2 style={headingStyle}>Featured Work</h2>
-          <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
-
-          <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem" }}>
-            {PROJECTS.map((p, i) => <ProjectCard key={p.title} project={p} i={i} />)}
-          </div>
+        <div style={{
+          background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)",
+          borderRadius: 16, padding: "2rem", backdropFilter: "blur(10px)",
+        }}>
+          <ContactForm />
         </div>
-      </section>
+      </div>
+    </div>
+      </section >
 
-      {/* ─── SERVICES ─── */}
-      <section id="services" style={{ position: "relative", zIndex: 1, background: "rgba(124,58,237,0.02)" }}>
-        <div style={{ ...sectionStyle }}>
-          <span style={subAccent}>// services.offer()</span>
-          <h2 style={headingStyle}>What I Do</h2>
-          <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
-
-          <div className="services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1.25rem" }}>
-            {SERVICES.map((s, i) => <ServiceCard key={s.title} service={s} i={i} />)}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CONTACT ─── */}
-      <section id="contact" style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ ...sectionStyle }}>
-          <span style={subAccent}>// contact.init()</span>
-          <h2 style={headingStyle}>Get In Touch</h2>
-          <div style={{ width: 50, height: 2, background: "linear-gradient(90deg,#00d4ff,transparent)", marginBottom: "3rem" }} />
-
-          <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
-            <div>
-              <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "2rem" }}>
-                Have a project in mind or just want to connect? My inbox is always open. Whether you have a question or just want to say hello, I'll do my best to get back to you.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                {[
-                  { icon: "📧", label: "Email", value: "nullbyte404@dev.io" },
-                  { icon: "📍", label: "Location", value: "Digital Realm, Internet" },
-                  { icon: "⚡", label: "Status", value: "Available for work" },
-                ].map((item) => (
-                  <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,212,255,0.08)", border: "1px solid rgba(0,212,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", flexShrink: 0 }}>
-                      {item.icon}
-                    </div>
-                    <div>
-                      <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.65rem", color: "rgba(0,212,255,0.6)", letterSpacing: "0.2em", marginBottom: 2 }}>{item.label}</div>
-                      <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.82rem", color: "#e2e8f0" }}>{item.value}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Social links */}
-              <div style={{ marginTop: "2rem", display: "flex", gap: "0.75rem" }}>
-                {[
-                  { label: "GitHub", icon: "⌘", href: "https://github.com" },
-                  { label: "Facebook", icon: "◉", href: "https://facebook.com" },
-                  { label: "Telegram", icon: "◈", href: "https://telegram.org" },
-                ].map((social) => (
-                  <a key={social.label} href={social.href} target="_blank" rel="noreferrer"
-                    style={{
-                      display: "flex", alignItems: "center", gap: "0.5rem",
-                      background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: 8, padding: "0.6rem 1rem",
-                      color: "rgba(255,255,255,0.6)", textDecoration: "none",
-                      fontFamily: "'Courier New', monospace", fontSize: "0.75rem",
-                      transition: "all 0.2s",
-                    }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(0,212,255,0.4)"; e.currentTarget.style.color = "#00d4ff"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; e.currentTarget.style.color = "rgba(255,255,255,0.6)"; }}>
-                    <span>{social.icon}</span> {social.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div style={{
-              background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)",
-              borderRadius: 16, padding: "2rem", backdropFilter: "blur(10px)",
-            }}>
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── FOOTER ─── */}
-      <footer style={{
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        padding: "2rem",
-        display: "flex", justifyContent: "center", alignItems: "center",
+  {/* ─── FOOTER ─── */ }
+  < footer style = {{
+  borderTop: "1px solid rgba(255,255,255,0.06)",
+    padding: "2rem",
+      display: "flex", justifyContent: "center", alignItems: "center",
         position: "relative", zIndex: 1,
       }}>
-        <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>
-          © 2025 <span style={{ color: "#00d4ff" }}>NullByte404</span>. Built with React & passion.
-        </div>
-      </footer>
+  <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>
+    © 2025 <span style={{ color: "#00d4ff" }}>NullByte404</span>. Built with React & passion.
+  </div>
+      </footer >
 
-      {/* Scroll to top */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        style={{
-          position: "fixed", bottom: "2rem", right: "2rem", zIndex: 200,
-          width: 44, height: 44, borderRadius: "50%",
-          background: "rgba(0,212,255,0.1)", border: "1px solid rgba(0,212,255,0.4)",
-          color: "#00d4ff", fontSize: "1rem", cursor: "pointer",
+  {/* Scroll to top */ }
+  < button
+onClick = {() => window.scrollTo({ top: 0, behavior: "smooth" })}
+style = {{
+  position: "fixed", bottom: "2rem", right: "2rem", zIndex: 200,
+    width: 44, height: 44, borderRadius: "50%",
+      background: "rgba(0,212,255,0.1)", border: "1px solid rgba(0,212,255,0.4)",
+        color: "#00d4ff", fontSize: "1rem", cursor: "pointer",
           display: "flex", alignItems: "center", justifyContent: "center",
-          opacity: showTop ? 1 : 0, pointerEvents: showTop ? "all" : "none",
-          transition: "opacity 0.3s",
-          boxShadow: "0 0 20px rgba(0,212,255,0.15)",
+            opacity: showTop ? 1 : 0, pointerEvents: showTop ? "all" : "none",
+              transition: "opacity 0.3s",
+                boxShadow: "0 0 20px rgba(0,212,255,0.15)",
         }}>
         ↑
-      </button>
+      </button >
     </>
   );
 }
