@@ -1,22 +1,40 @@
 
-
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3 } from "react-icons/fa";
+import { DiMysql } from "react-icons/di";
+import { FaBootstrap } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTelegram } from "react-icons/fa";
+import { FaRegFaceSmileBeam } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { FaPhp } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { FaLaravel } from "react-icons/fa";
+import { BsLightningChargeFill } from "react-icons/bs";
+import { RiGitBranchFill } from "react-icons/ri";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaJs } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import nullbyte from './assets/null.jpg';
 
 const SKILLS = [
-  { name: "HTML", level: 95, icon: "🌐" },
-  { name: "CSS", level: 92, icon: "🎨" },
-  { name: "JavaScript", level: 88, icon: "⚡" },
-  { name: "React", level: 85, icon: "⚛️" },
-  { name: "Tailwind CSS", level: 90, icon: "💨" },
-  { name: "PHP", level: 75, icon: "🐘" },
-  { name: "MySQL", level: 78, icon: "🗃️" },
-  { name: "Git & GitHub", level: 88, icon: "🔧" },
+  { name: "HTML", level: 95, icon: <FaHtml5 className="text-red-600"/> },
+  { name: "CSS", level: 92, icon:<FaCss3  className="text-blue-700"/> },
+  { name: "JavaScript", level: 88, icon: <FaJs className="text-amber-300"/>},
+  { name: "React", level: 85, icon: <FaReact className="text-sky-400"/> },
+  { name: "Tailwind CSS", level: 90, icon: <RiTailwindCssFill className="text-sky-300"/> },
+  { name: "PHP", level: 75, icon: <FaPhp  className="text-blue-600"/> },
+  { name: "MySQL", level: 78, icon: <DiMysql className="text-blue-400 "/> },
+  { name: "Git & GitHub", level: 88, icon: <RiGitBranchFill className="text-red-500" />  },
+  { name: "Laravel", level: 50, icon: <FaLaravel className="text-red-500" />  },
+  { name: "Bootstraps", level: 60, icon: <FaBootstrap className="text-purple-500" />  },
 ];
 
 const PROJECTS = [
   {
-    title: "NeonShop",
+    title: "ShoseShop",
     desc: "A futuristic e-commerce UI with dark glassmorphism cards, animated product carousels, and seamless checkout flow.",
     tag: "React · Tailwind",
     color: "#00d4ff",
@@ -42,8 +60,8 @@ const PROJECTS = [
 ];
 
 const SERVICES = [
-  { title: "Web Design", icon: "✦", desc: "Crafting visually stunning interfaces that balance aesthetics with usability and brand identity." },
-  { title: "Frontend Dev", icon: "⌬", desc: "Building performant, scalable React applications with clean architecture and modern tooling." },
+  { title: "Backend Developer", icon: "✦", desc: "Crafting visually stunning interfaces that balance aesthetics with usability and brand identity." },
+  { title: "Frontend Develper", icon: "⌬", desc: "Building performant, scalable React applications with clean architecture and modern tooling." },
   { title: "Responsive Design", icon: "◈", desc: "Pixel-perfect layouts that adapt beautifully across every device and screen resolution." },
   { title: "UI/UX Design", icon: "◎", desc: "User-centered design processes from wireframes and prototypes to polished final products." },
 ];
@@ -241,8 +259,8 @@ function SkillBar({ name, level, icon, delay }) {
   return (
     <div ref={ref} style={{ marginBottom: "1.25rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-        <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.85rem", color: "#e2e8f0", letterSpacing: "0.05em" }}>
-          {icon} {name}
+        <span className="flex gap-3" style={{  fontFamily: "'Courier New', monospace", fontSize: "0.85rem", color: "#e2e8f0", letterSpacing: "0.05em" }}>
+          <div className="mt-0.5">{icon}</div> {name}
         </span>
         <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "#00d4ff" }}>{level}%</span>
       </div>
@@ -476,14 +494,14 @@ export default function Portfolio() {
             {/* Text */}
             <div style={{ flex: 1 }}>
               <span style={{ ...subAccent, animationDelay: "0.1s" }} className="fade-up">
-                &lt; Hello, World! /&gt;
+                &lt; Welcome to my portfolio &gt;
               </span>
               <h1 className="fade-up" style={{ fontFamily: "'Courier New', monospace", fontSize: "clamp(2.5rem, 7vw, 4.5rem)", fontWeight: 700, margin: "0 0 0.5rem", letterSpacing: "0.05em", lineHeight: 1.1, animationDelay: "0.15s" }}>
                 <span style={{ color: "#f1f5f9" }}>NullByte</span>
                 <span style={{ color: "#00d4ff" }}>404</span>
               </h1>
-              <div className="fade-up" style={{ fontFamily: "'Courier New', monospace", fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#64748b", marginBottom: "1.25rem", minHeight: "2rem", animationDelay: "0.2s" }}>
-                <span style={{ color: "rgba(0,212,255,0.7)" }}>{">"} </span>
+              <div className="fade-up flex gap-3 " style={{ fontFamily: "'Courier New', monospace", fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#64748b", marginBottom: "1.25rem", minHeight: "2rem", animationDelay: "0.2s" }}>
+                <span className="mt-1" style={{ color: "rgba(0,212,255,0.7)" }}>{<FaRegFaceSmileBeam />} </span>
                 <span style={{ color: "#94a3b8" }}>{typing}</span>
                 <span style={{ animation: "pulse 1s infinite", color: "#00d4ff" }}>|</span>
               </div>
@@ -681,9 +699,9 @@ export default function Portfolio() {
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             {[
-              { icon: "📧", label: "Email", value: "nullbyte404@dev.io" },
-              { icon: "📍", label: "Location", value: "Digital Realm, Internet" },
-              { icon: "⚡", label: "Status", value: "Available for work" },
+              { icon: <MdEmail  className="text-sky-400"/>, label: "Email", value: "vunkhemra06@gmail.com" },
+              { icon: <FaLocationDot className="text-blue-600"/>, label: "Location", value: "Russey Keo,Phnom Penh" },
+              { icon: <BsLightningChargeFill className="text-sky-400" /> , label: "Status", value: "Available for work" },
             ].map((item) => (
               <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(0,212,255,0.08)", border: "1px solid rgba(0,212,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem", flexShrink: 0 }}>
@@ -700,9 +718,9 @@ export default function Portfolio() {
           {/* Social links */}
           <div style={{ marginTop: "2rem", display: "flex", gap: "0.75rem" }}>
             {[
-              { label: "GitHub", icon: "⌘", href: "https://github.com" },
-              { label: "Facebook", icon: "◉", href: "https://facebook.com" },
-              { label: "Telegram", icon: "◈", href: "https://telegram.org" },
+              { label: "GitHub", icon: <FaGithub className="text-gray-400 text-xl"/>, href: "https://github.com/itkmeng87-lang" },
+              { label: "Facebook", icon: <FaFacebook className="text-blue-500 text-xl" />, href: "https://www.facebook.com/share/18D7ry5Hnd/?mibextid=wwXIfr" },
+              { label: "Telegram", icon: <FaTelegram className="text-sky-400 text-xl"/>, href: "https://t.me/vunkhemra" },
             ].map((social) => (
               <a key={social.label} href={social.href} target="_blank" rel="noreferrer"
                 style={{
@@ -739,7 +757,7 @@ export default function Portfolio() {
         position: "relative", zIndex: 1,
       }}>
   <div style={{ fontFamily: "'Courier New', monospace", fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>
-    © 2025 <span style={{ color: "#00d4ff" }}>NullByte404</span>. Built with React & passion.
+    © 2025 <span style={{ color: "#00d4ff" }}>NullByte404</span>. Thanks You !! For Contact Me.
   </div>
       </footer >
 
